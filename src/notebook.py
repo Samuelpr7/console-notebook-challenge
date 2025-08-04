@@ -24,6 +24,10 @@ class Notebook:
         self.list = []
 
     def add_note(self, title: str, text: str, importance: str) -> int:
+
         def generar_nuevo_codigo(notas):
             codigos_existentes = {nota['codigo'] for nota in notas}
-            nuevo_codigo = len(notas) + 1.
+            nuevo_codigo = len(notas) + 1
+
+            while nuevo_codigo in codigos_existentes:
+                nuevo_codigo += 1
